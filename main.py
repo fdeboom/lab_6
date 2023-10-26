@@ -1,9 +1,25 @@
-def encoder(password):  # encodes password by adding 3 to each digit
-    for i in len(password):
-        password[i] = str(int(password[i]) + 3)
-    return password
+def encoder(pw):  # encodes password by adding 3 to each digit
+    for i in len(pw):
+        pw[i] = str(int(pw[i]) + 3)
+    return pw
+
+
+def decoder(pw):
+    return pw
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    encoder("123456")
+    menu = "Menu\n----------\n1. Encode\n2. Decode\n3. Quit\n\n"
+    print(menu)
+    choice = 4
+    password = ""
+    while choice != 3:
+        choice = int(input('Please enter an option: '))
+        if choice == 1:
+            password = input('Please enter your password to encode: ')
+            password = encoder(password)
+            print('Your password has been encoded and stored!')
+        elif choice == 2:
+            decoded = decoder(password)
+            print(f'The encoded password is {password}, and the original password is {decoded}.')
