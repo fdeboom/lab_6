@@ -6,7 +6,7 @@ def encoder(pw):  # encodes password by adding 3 to each digit
 
 def decoder(pw):
     for i in len(pw):
-        pw[i] = str(int(pw[i]) + 3)
+        pw[i] = str(int(pw[i]) - 3)
     return pw
 
 
